@@ -60,7 +60,7 @@ path=""
 inDaisy=false
 for i in "${!currTree[@]}"; do 
 	path="$path/${currTree[$i]}"
-	if [[ "${currTree[$i]}" == "daisy" ]]; then
+	if [[ "${currTree[$i]}" == "daisy" || "${currTree[$i]}" == "Daisy" ]]; then
 		inDaisy=true
 		break
 	fi
@@ -79,7 +79,7 @@ if [[ ! -d "$metalibmdir" ]]; then
 	exit 1
 fi
 
-cd metalibmdir
+cd $metalibmdir
 export METALIBM_PATH=$metalibmdir
 export PATH=$PATH:$metalibmdir
 
