@@ -36,6 +36,14 @@ trait Taylor extends DeltaAbstractionUtils with RangeEvaluators {
         }
       }
     }
+    
+    override def max[U <: Option[Rational]](x: U, y: U): U = {
+      super[Ordering].max(x, y)
+    }
+
+    override def min[U <: Option[Rational]](x: U, y: U): U = {
+      super[Ordering].min(x, y)
+    }
   }
 
 
